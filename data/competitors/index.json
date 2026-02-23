@@ -1,0 +1,16 @@
+[
+  { "id": "atombit", "name": "Atombit", "url": "https://www.atombit.com", "region": "EU/India", "tech": "", "tier": "HIGH" },
+  { "id": "sovanta", "name": "Sovanta", "url": "https://sovanta.com", "region": "DACH/EU", "tech": "Qualtrics, SAP", "tier": "HIGH" },
+  { "id": "new-metrics", "name": "New Metrics", "url": "https://www.newmetrics.net", "region": "GCC/Global", "tech": "Qualtrics", "tier": "HIGH" },
+  { "id": "ipsos-cx", "name": "Ipsos CX", "url": "https://www.ipsos.com/en/customer-experience", "region": "Global", "tech": "Medallia", "tier": "MEDIUM" },
+  { "id": "commonfont", "name": "commonFont", "url": "https://www.commonfont.com", "region": "US", "tech": "Qualtrics", "tier": "MEDIUM" },
+  { "id": "higher-oak", "name": "Higher Oak", "url": "https://higheroak.com", "region": "UK/EU", "tech": "Qualtrics", "tier": "MEDIUM" },
+  { "id": "lukkap", "name": "Lukkap", "url": "https://www.lukkap.com", "region": "España/LATAM", "tech": "", "tier": "MEDIUM" },
+  { "id": "izo", "name": "Izo", "url": "https://www.izo.es", "region": "Iberoamérica", "tech": "Qualtrics", "tier": "MEDIUM" },
+  { "id": "globant", "name": "Globant", "url": "https://www.globant.com", "region": "Global", "tech": "", "tier": "LOW" },
+  { "id": "gemseek", "name": "GemSeek", "url": "https://www.gemseek.com", "region": "EU", "tech": "", "tier": "INACTIVE" },
+  { "id": "voce-group", "name": "Vocé Group", "url": "", "region": "—", "tech": "", "tier": "LOW" },
+  { "id": "zill-consulting", "name": "Zill Consulting", "url": "", "region": "—", "tech": "", "tier": "LOW" },
+  { "id": "act-xm", "name": "Act XM", "url": "", "region": "—", "tech": "", "tier": "LOW" },
+  { "id": "acceleration-strategy", "name": "Acceleration Strategy", "url": "https://www.qualtrics.com/partnerships/acceleration-strategy-inc/", "region": "Canada/US", "tech": "Qualtrics", "tier": "LOW" }
+]

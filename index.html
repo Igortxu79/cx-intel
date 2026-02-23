@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SMT CX Intel — Competitive Intelligence Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0a1628;
+      --blue: #0057b8;
+      --blue-light: #1a6fd4;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --cream: #f7f4ef;
+      --gray-100: #f0eee9;
+      --gray-200: #ddd9d0;
+      --gray-500: #8a8478;
+      --gray-800: #2d2820;
+      --white: #ffffff;
+      --high: #c0392b;
+      --high-bg: #fdf0ef;
+      --medium: #8a6d00;
+      --medium-bg: #fef9e7;
+      --low: #2d7a2d;
+      --low-bg: #edf7ed;
+      --inactive: #777;
+      --inactive-bg: #f0f0f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--gray-800);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--gold);
+    }
+    .nav-brand {
+      font-family: 'DM Serif Display', serif;
+      color: var(--white);
+      font-size: 18px;
+      letter-spacing: 0.3px;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 8px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--white);
+      background: rgba(255,255,255,0.1);
+    }
+    .nav-links a.active { color: var(--gold); }
+
+    /* ── PAGES ── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 60px 40px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 900px; margin: 0 auto; }
+    .hero-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 42px;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .hero-subtitle {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
+    }
+    .hero-meta {
+      margin-top: 28px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .hero-stat-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: var(--gold);
+    }
+    .hero-stat-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main { max-width: 900px; margin: 0 auto; padding: 40px 40px; }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--navy);
+    }
+    .section-count {
+      font-size: 12px;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    /* ── ACTIVITY BADGE ── */
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-HIGH { background: var(--high-bg); color: var(--high); }
+    .badge-MEDIUM { background: var(--medium-bg); color: var(--medium); }
+    .badge-LOW { background: var(--low-bg); color: var(--low); }
+    .badge-INACTIVE { background: var(--inactive-bg); color: var(--inactive); }
+
+    /* ── COMPETITOR CARDS (landing) ── */
+    .competitor-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .comp-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 18px 20px;
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 16px;
+      align-items: start;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .comp-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      border-color: var(--blue);
+    }
+    .comp-card-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .comp-card-badge { margin-top: 2px; }
+    .comp-card-headline {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--gray-800);
+    }
+    .comp-card-link {
+      font-size: 12px;
+      color: var(--blue);
+      text-decoration: none;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .comp-card-link:hover { text-decoration: underline; }
+
+    /* ── TAKEAWAYS ── */
+    .takeaways-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .takeaway-item {
+      background: var(--white);
+      border-left: 3px solid var(--gold);
+      padding: 14px 18px;
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--gray-800);
+    }
+    .takeaway-num {
+      font-weight: 700;
+      color: var(--gold);
+      margin-right: 6px;
+    }
+
+    /* ── ARCHIVE PAGE ── */
+    .archive-list { display: grid; gap: 10px; }
+    .archive-item {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.2s;
+    }
+    .archive-item:hover { border-color: var(--blue); }
+    .archive-date {
+      font-family: 'DM Serif Display', serif;
+      font-size: 16px;
+      color: var(--navy);
+    }
+    .archive-meta { font-size: 12px; color: var(--gray-500); margin-top: 2px; }
+    .archive-link {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid var(--blue);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .archive-link:hover { background: var(--blue); color: var(--white); }
+
+    /* ── COMPETITORS INDEX ── */
+    .comp-index-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .comp-index-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .comp-index-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transform: translateY(-1px);
+    }
+    .comp-index-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 17px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .comp-index-meta {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-bottom: 10px;
+    }
+    .comp-index-url {
+      font-size: 11px;
+      color: var(--blue);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .comp-index-url:hover { text-decoration: underline; }
+
+    /* ── COMPETITOR DETAIL ── */
+    .comp-detail-header {
+      background: var(--navy);
+      padding: 40px 40px 32px;
+    }
+    .comp-detail-header-inner { max-width: 900px; margin: 0 auto; }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      margin-bottom: 20px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--white); }
+    .comp-detail-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .comp-detail-tags { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .comp-detail-tag {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.08);
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+    .comp-detail-url {
+      font-size: 12px;
+      color: var(--gold);
+      text-decoration: none;
+      margin-top: 12px;
+      display: inline-block;
+    }
+    .comp-detail-url:hover { text-decoration: underline; }
+
+    .comp-history { display: grid; gap: 12px; }
+    .comp-history-item {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 16px 20px;
+    }
+    .comp-history-date {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+    .comp-history-headline {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--gray-800);
+    }
+    .comp-history-badge { float: right; margin-left: 12px; }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gray-500);
+    }
+    .empty-state-icon { font-size: 40px; margin-bottom: 16px; }
+    .empty-state-title { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 8px; }
+    .empty-state-text { font-size: 14px; }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 60px;
+      border-top: 1px solid var(--gray-200);
+      padding: 24px 40px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray-500);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 0 16px; }
+      .hero { padding: 40px 16px 32px; }
+      .hero-title { font-size: 28px; }
+      .main { padding: 24px 16px; }
+      .comp-card { grid-template-columns: 1fr; }
+      .comp-index-grid { grid-template-columns: 1fr; }
+      .comp-detail-header { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-brand">SMT <span>CX Intel</span></div>
+  <div class="nav-links">
+    <a href="#" class="active" onclick="showPage('landing', this)">Último análisis</a>
+    <a href="#" onclick="showPage('historico', this)">Histórico</a>
+    <a href="#" onclick="showPage('archivo', this)">Archivo</a>
+    <a href="#" onclick="showPage('competidores', this)">Competidores</a>
+  </div>
+</nav>
+
+<!-- ══ LANDING PAGE ══ -->
+<div id="page-landing" class="page active">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">Competitive Intelligence · SMT Tech Partners</div>
+      <div class="hero-title" id="hero-title">Cargando análisis...</div>
+      <div class="hero-subtitle" id="hero-subtitle"></div>
+      <div class="hero-meta" id="hero-meta"></div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section-header">
+      <div class="section-title">Análisis por competidor</div>
+      <div class="section-count" id="comp-count"></div>
+    </div>
+    <div class="competitor-grid" id="competitor-grid"></div>
+
+    <div class="section-header" style="margin-top: 48px;">
+      <div class="section-title">Conclusiones clave</div>
+    </div>
+    <div class="takeaways-list" id="takeaways-list"></div>
+  </div>
+</div>
+
+<!-- ══ HISTÓRICO PAGE ══ -->
+<div id="page-historico" class="page">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">Tendencias acumuladas</div>
+      <div class="hero-title">Histórico de actividad</div>
+      <div class="hero-subtitle">Evolución de los competidores a lo largo del tiempo</div>
+    </div>
+  </div>
+  <div class="main">
+    <div id="historico-content"></div>
+  </div>
+</div>
+
+<!-- ══ ARCHIVO PAGE ══ -->
+<div id="page-archivo" class="page">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">Reportes anteriores</div>
+      <div class="hero-title">Archivo de análisis</div>
+      <div class="hero-subtitle">Todos los reportes semanales por fecha</div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section-header">
+      <div class="section-title">Reportes</div>
+      <div class="section-count" id="archivo-count"></div>
+    </div>
+    <div class="archive-list" id="archive-list"></div>
+  </div>
+</div>
+
+<!-- ══ COMPETIDORES INDEX PAGE ══ -->
+<div id="page-competidores" class="page">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">14 empresas monitoreadas</div>
+      <div class="hero-title">Index de competidores</div>
+      <div class="hero-subtitle">Haz click en cualquier competidor para ver su historial completo</div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section-header">
+      <div class="section-title">Todos los competidores</div>
+    </div>
+    <div class="comp-index-grid" id="comp-index-grid"></div>
+  </div>
+</div>
+
+<!-- ══ COMPETITOR DETAIL PAGE ══ -->
+<div id="page-comp-detail" class="page">
+  <div class="comp-detail-header">
+    <div class="comp-detail-header-inner">
+      <div class="back-btn" onclick="showPage('competidores', null)">← Volver al índice</div>
+      <div class="comp-detail-name" id="detail-name"></div>
+      <div class="comp-detail-tags" id="detail-tags"></div>
+      <a class="comp-detail-url" id="detail-url" href="#" target="_blank"></a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section-header">
+      <div class="section-title">Historial de noticias</div>
+      <div class="section-count" id="detail-count"></div>
+    </div>
+    <div class="comp-history" id="detail-history"></div>
+  </div>
+</div>
+
+<footer>
+  SMT Tech Partners · CX Intel Tracker · Actualización automática cada lunes 07:00 Europe/Madrid
+</footer>
+
+<script>
+  let allReports = [];
+  let competitors = [];
+
+  // ── LOAD DATA ──
+  async function loadData() {
+    try {
+      // Load competitors index
+      const compRes = await fetch('data/competitors/index.json');
+      competitors = await compRes.json();
+
+      // Load reports manifest
+      const manifestRes = await fetch('data/reports/manifest.json');
+      const manifest = await manifestRes.json();
+
+      // Load all reports
+      for (const entry of manifest.reports) {
+        const res = await fetch(`data/reports/${entry.file}`);
+        const data = await res.json();
+        allReports.push(data);
+      }
+
+      // Sort reports newest first
+      allReports.sort((a, b) => b.date.localeCompare(a.date));
+
+      renderLanding();
+      renderArchive();
+      renderCompetitorsIndex();
+      renderHistorico();
+    } catch(e) {
+      console.error('Error loading data:', e);
+    }
+  }
+
+  // ── RENDER LANDING ──
+  function renderLanding() {
+    const latest = allReports[0];
+    if (!latest) return;
+
+    document.getElementById('hero-title').textContent = latest.week_label;
+    document.getElementById('hero-subtitle').textContent = `${latest.summary.length} competidores analizados · ${latest.summary.filter(c=>c.level==='HIGH').length} en nivel HIGH`;
+
+    // Stats
+    const high = latest.summary.filter(c=>c.level==='HIGH').length;
+    const medium = latest.summary.filter(c=>c.level==='MEDIUM').length;
+    const low = latest.summary.filter(c=>c.level==='LOW').length;
+    document.getElementById('hero-meta').innerHTML = `
+      <div class="hero-stat"><div class="hero-stat-value">${high}</div><div class="hero-stat-label">HIGH</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">${medium}</div><div class="hero-stat-label">MEDIUM</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">${low}</div><div class="hero-stat-label">LOW</div></div>
+      <div class="hero-stat"><div class="hero-stat-value">${allReports.length}</div><div class="hero-stat-label">Semanas</div></div>
+    `;
+
+    document.getElementById('comp-count').textContent = `${latest.summary.length} competidores`;
+
+    // Cards
+    const grid = document.getElementById('competitor-grid');
+    grid.innerHTML = latest.summary.map(c => `
+      <div class="comp-card" onclick="showCompDetail('${c.competitor}')">
+        <div>
+          <div class="comp-card-name">${c.competitor}</div>
+          <div class="comp-card-badge"><span class="badge badge-${c.level}">${c.level}</span></div>
+        </div>
+        <div class="comp-card-headline">${c.headline}</div>
+        ${c.url ? `<a class="comp-card-link" href="${c.url}" target="_blank" onclick="event.stopPropagation()">Ver fuente →</a>` : '<span></span>'}
+      </div>
+    `).join('');
+
+    // Takeaways
+    const tList = document.getElementById('takeaways-list');
+    tList.innerHTML = latest.takeaways.map((t, i) => `
+      <div class="takeaway-item"><span class="takeaway-num">${i+1}.</span>${t}</div>
+    `).join('');
+  }
+
+  // ── RENDER ARCHIVE ──
+  function renderArchive() {
+    document.getElementById('archivo-count').textContent = `${allReports.length} reportes`;
+    const list = document.getElementById('archive-list');
+    list.innerHTML = allReports.map(r => {
+      const high = r.summary.filter(c=>c.level==='HIGH').length;
+      const date = new Date(r.date + 'T00:00:00');
+      const formatted = date.toLocaleDateString('es-ES', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+      return `
+        <div class="archive-item">
+          <div>
+            <div class="archive-date">${formatted}</div>
+            <div class="archive-meta">${r.summary.length} competidores · ${high} en nivel HIGH</div>
+          </div>
+          <a class="archive-link" href="data/reports/${r.date}.json" target="_blank">Ver JSON →</a>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // ── RENDER COMPETITORS INDEX ──
+  function renderCompetitorsIndex() {
+    const grid = document.getElementById('comp-index-grid');
+    grid.innerHTML = competitors.map(c => `
+      <div class="comp-index-card" onclick="showCompDetail('${c.name}')">
+        <div class="comp-index-name">${c.name}</div>
+        <div class="comp-index-meta">
+          ${c.region ? `📍 ${c.region}` : ''}
+          ${c.tech ? ` · 🔧 ${c.tech}` : ''}
+        </div>
+        <span class="badge badge-${c.tier}">${c.tier}</span>
+        ${c.url ? `<br/><a class="comp-index-url" href="${c.url}" target="_blank" onclick="event.stopPropagation()">${c.url}</a>` : ''}
+      </div>
+    `).join('');
+  }
+
+  // ── RENDER HISTORICO ──
+  function renderHistorico() {
+    const container = document.getElementById('historico-content');
+    if (allReports.length < 2) {
+      container.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">📊</div>
+          <div class="empty-state-title">Histórico en construcción</div>
+          <div class="empty-state-text">El histórico de tendencias aparecerá aquí a partir del segundo reporte semanal.</div>
+        </div>`;
+      return;
+    }
+
+    // Build activity map per competitor
+    const activityMap = {};
+    allReports.forEach(r => {
+      r.summary.forEach(c => {
+        if (!activityMap[c.competitor]) activityMap[c.competitor] = [];
+        activityMap[c.competitor].push({ date: r.date, level: c.level, headline: c.headline });
+      });
+    });
+
+    // Show competitors that had HIGH activity
+    const highComps = Object.entries(activityMap)
+      .filter(([name, entries]) => entries.some(e => e.level === 'HIGH'))
+      .sort((a, b) => a[0].localeCompare(b[0]));
+
+    container.innerHTML = `
+      <div class="section-header">
+        <div class="section-title">Competidores con actividad HIGH</div>
+      </div>
+      ${highComps.map(([name, entries]) => `
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 12px;">${name}</h3>
+          ${entries.map(e => `
+            <div style="display:flex; gap:12px; align-items:start; padding: 10px 0; border-bottom: 1px solid var(--gray-100);">
+              <span style="font-size:11px; color:var(--gray-500); white-space:nowrap; min-width:90px;">${e.date}</span>
+              <span class="badge badge-${e.level}" style="min-width:60px; text-align:center;">${e.level}</span>
+              <span style="font-size:13px; line-height:1.5;">${e.headline}</span>
+            </div>
+          `).join('')}
+        </div>
+      `).join('')}
+    `;
+  }
+
+  // ── SHOW COMPETITOR DETAIL ──
+  function showCompDetail(competitorName) {
+    const comp = competitors.find(c => c.name === competitorName);
+    const history = [];
+
+    allReports.forEach(r => {
+      const entry = r.summary.find(c => c.competitor === competitorName);
+      if (entry) history.push({ date: r.date, week_label: r.week_label, ...entry });
+    });
+    history.sort((a, b) => b.date.localeCompare(a.date));
+
+    document.getElementById('detail-name').textContent = competitorName;
+    document.getElementById('detail-tags').innerHTML = `
+      <span class="badge badge-${comp?.tier || 'LOW'}">${comp?.tier || 'LOW'}</span>
+      ${comp?.region ? `<span class="comp-detail-tag">📍 ${comp.region}</span>` : ''}
+      ${comp?.tech ? `<span class="comp-detail-tag">🔧 ${comp.tech}</span>` : ''}
+    `;
+
+    const urlEl = document.getElementById('detail-url');
+    if (comp?.url) {
+      urlEl.href = comp.url;
+      urlEl.textContent = comp.url;
+      urlEl.style.display = 'inline-block';
+    } else {
+      urlEl.style.display = 'none';
+    }
+
+    document.getElementById('detail-count').textContent = `${history.length} entradas`;
+
+    const historyEl = document.getElementById('detail-history');
+    if (history.length === 0) {
+      historyEl.innerHTML = `<div class="empty-state"><div class="empty-state-text">Sin datos históricos disponibles.</div></div>`;
+    } else {
+      historyEl.innerHTML = history.map(h => `
+        <div class="comp-history-item">
+          <div>
+            <span class="comp-history-badge"><span class="badge badge-${h.level}">${h.level}</span></span>
+            <div class="comp-history-date">${h.week_label}</div>
+            <div class="comp-history-headline">${h.headline}</div>
+            ${h.url ? `<a href="${h.url}" target="_blank" style="font-size:12px; color:var(--blue); margin-top:8px; display:inline-block;">Ver fuente →</a>` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Show detail page
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-comp-detail').classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    window.scrollTo(0, 0);
+  }
+
+  // ── SHOW PAGE ──
+  function showPage(pageId, linkEl) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + pageId).classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    if (linkEl) linkEl.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  // ── INIT ──
+  loadData();
+</script>
+</body>
+</html>
