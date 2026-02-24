@@ -1,5 +1,14 @@
 {
   "reports": [
-    { "file": "2026-02-22.json", "date": "2026-02-22", "label": "Semana del 22 de febrero de 2026" }
+    {
+      "file": "2026-02-24.json",
+      "date": "2026-02-24",
+      "label": "Semana del 24 de February de 2026"
+    },
+    {
+      "file": "2026-02-22.json",
+      "date": "2026-02-22",
+      "label": "Semana del 22 de febrero de 2026"
+    }
   ]
 }
