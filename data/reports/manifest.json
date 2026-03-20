@@ -1,6 +1,11 @@
 {
   "reports": [
     {
+      "file": "2026-03-20.json",
+      "date": "2026-03-20",
+      "label": "Semana del 20 de March de 2026"
+    },
+    {
       "file": "2026-03-13.json",
       "date": "2026-03-13",
       "label": "Semana del 13 de March de 2026"
