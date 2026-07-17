@@ -1,0 +1,104 @@
+{
+  "date": "2026-07-17",
+  "week_label": "Semana del 17 de July de 2026",
+  "summary": [
+    {
+      "competitor": "Atombit",
+      "level": "MEDIUM",
+      "headline": "Atombit's sub-brands Profusion and Amplify Analytix continue their LinkedIn content cadence around GenAI-powered customer intelligence and predictive analytics for financial services. No new press releases detected on the Atombit press page during this monitoring window. Messaging continues to emphasize AI-driven segmentation, next-best-action decisioning, and real-time customer data platforms for banking and insurance verticals.",
+      "url": "https://www.atombit.com/press/",
+      "blog_profile": "Atombit operates through specialized sub-brands (Profusion for data science and customer analytics, Amplify Analytix for decisioning platforms) targeting financial services with AI-powered customer intelligence. Their methodology centers on predictive analytics, micro-segmentation, and next-best-action frameworks built on real-time customer data platforms. Delivery model combines managed analytics services with proprietary technology layers, primarily serving banking and insurance clients across EU and India markets. Thought leadership themes emphasize GenAI applications in customer lifetime value optimization and hyper-personalization at scale."
+    },
+    {
+      "competitor": "Sovanta",
+      "level": "MEDIUM",
+      "headline": "Sovanta maintains its SAP-Qualtrics embedded analytics positioning with continued LinkedIn content around AI agent integration within SAP BTP workflows. No major new product announcements or partnership expansions detected during this monitoring window. Content continues to target DACH manufacturing and financial services with AI-powered operational experience convergence messaging.",
+      "url": "https://sovanta.com/en/news/",
+      "blog_profile": "Sovanta differentiates through deep SAP-Qualtrics integration, building embedded experience analytics directly into SAP BTP and S/4HANA workflows. Their methodology bridges operational data (O-data) with experience data (X-data) at the process level, enabling real-time closed-loop action within enterprise SAP environments. Delivery model is consultative with custom application development, primarily serving DACH-region manufacturing and financial services enterprises. AI stance focuses on intelligent agents and automated decisioning within existing SAP ecosystems rather than standalone CX platforms."
+    },
+    {
+      "competitor": "New Metrics",
+      "level": "MEDIUM",
+      "headline": "New Metrics maintains its GCC public sector CX leadership positioning with continued content around citizen experience transformation aligned to Saudi Vision 2030 and UAE government digital programs. Resources page continues hosting thought leadership on government CX maturity frameworks and Qualtrics implementation best practices. No major new partnerships or significant shifts in messaging detected.",
+      "url": "https://www.newmetrics.net/resources/",
+      "blog_profile": "New Metrics positions as the leading Qualtrics implementation partner for GCC government and public sector CX transformation. Their methodology centers on citizen experience maturity frameworks, national CX index development, and large-scale Voice of Citizen programs aligned to national vision strategies (Saudi Vision 2030, UAE We the Emirates 2031). Delivery model combines Qualtrics platform implementation with strategic consulting on government service design and digital experience transformation. Thought leadership emphasizes benchmarking, cultural adaptation of CX frameworks for Arabic-speaking markets, and public sector experience ROI measurement."
+    },
+    {
+      "competitor": "Ipsos CX",
+      "level": "MEDIUM",
+      "headline": "Ipsos CX continues its steady cadence of global consumer insights publications and CX measurement methodology content. Focus remains on experience ROI frameworks, loyalty economics, and evolving consumer expectations across retail and financial services verticals. No major new Medallia platform announcements or significant partnership changes detected during this monitoring window.",
+      "url": "https://www.ipsos.com/en-us/solutions/customer-experience/customer-experience",
+      "blog_profile": "Ipsos CX leverages its global research infrastructure to deliver enterprise-scale CX measurement and analytics programs, with Medallia as a core technology partner. Their methodology integrates behavioral science, advanced analytics, and longitudinal consumer tracking to quantify experience ROI and predict loyalty outcomes. Delivery model combines syndicated research insights with bespoke enterprise CX programs across financial services, retail, and telecommunications. AI stance focuses on predictive modeling and NLP-driven text analytics within existing measurement frameworks rather than agentic AI deployment. Thought leadership themes emphasize consumer sentiment shifts, experience-led growth strategies, and cross-industry CX benchmarking."
+    },
+    {
+      "competitor": "commonFont",
+      "level": "MEDIUM",
+      "headline": "commonFont continues consistent thought leadership around Qualtrics AI agents, experience orchestration, and enterprise CX program optimization with sustained banking and financial services focus. LinkedIn content remains active with emphasis on AI-driven experience management and Qualtrics platform best practices. No major new announcements or publicized client wins detected in this monitoring window.",
+      "url": "https://www.commonfont.com/insights/",
+      "blog_profile": "commonFont positions as a Qualtrics-specialized consultancy focused on enterprise experience management program design and optimization, with particular depth in banking and financial services. Their methodology emphasizes experience orchestration, closed-loop feedback systems, and AI-augmented decision-making within the Qualtrics ecosystem. Delivery model combines strategic CX consulting with technical Qualtrics implementation and managed services. Thought leadership actively covers Qualtrics AI agent capabilities, platform feature deep-dives, and practical enterprise deployment guidance, positioning them as trusted Qualtrics ecosystem educators."
+    },
+    {
+      "competitor": "Higher Oak",
+      "level": "LOW",
+      "headline": "No new blog posts, announcements, or significant digital activity detected for Higher Oak. The extended content absence now spans multiple consecutive weeks, representing a prolonged quiet period for a Qualtrics Platinum Partner. Checked website blog, LinkedIn, and industry publications with no new findings.",
+      "url": "https://higheroak.com/blog/",
+      "blog_profile": "Higher Oak is a UK-based Qualtrics Platinum Partner focused on experience management consulting across UK and European markets. Their methodology centers on Qualtrics platform implementation, program design, and technical optimization. Delivery model appears to be boutique consultative with direct Qualtrics ecosystem integration. The prolonged content absence makes it difficult to assess current AI stance or evolving thought leadership themes, though historical positioning emphasized practical XM program deployment and operational excellence."
+    },
+    {
+      "competitor": "Lukkap",
+      "level": "MEDIUM",
+      "headline": "Lukkap maintains consistent Spanish-language content cadence with articles focused on employee experience design, customer journey transformation, and organizational change management across Spain and Latin America. Blog and LinkedIn activity continue reinforcing their platform-agnostic consulting positioning. No major new client wins, AI-specific messaging shifts, or partnership announcements detected.",
+      "url": "https://www.lukkap.com/articulos/",
+      "blog_profile": "Lukkap operates as a platform-agnostic CX and EX consulting firm across Spain and Latin America, with a methodology rooted in customer journey mapping, employee experience design, and organizational transformation. Their delivery model is strategy-led consulting without dependency on specific technology platforms, differentiating them from tech-partner-aligned competitors. Thought leadership themes emphasize the human side of experience transformation, including cultural change management, leadership alignment, and journey-driven organizational redesign. AI integration in their public content remains limited compared to tech-forward competitors."
+    },
+    {
+      "competitor": "Izo",
+      "level": "MEDIUM",
+      "headline": "Izo continues enterprise CX positioning across Iberoamerica with blog content on CX strategy, digital experience optimization, and Voice of Customer program design. Qualtrics-certified operations across 15+ Spanish-speaking markets remain actively promoted. No major new AI-specific messaging updates or partnership announcements detected in this monitoring window.",
+      "url": "https://www.izo.es/en/blog",
+      "blog_profile": "Izo positions as the leading Qualtrics-certified CX consultancy across Iberoamerica, with operations spanning 15+ Spanish-speaking markets. Their methodology integrates Voice of Customer program design, CX strategy development, and digital experience optimization within a Qualtrics-powered technology framework. Delivery model combines strategic consulting with Qualtrics implementation and managed services, targeting enterprise clients in banking, telecommunications, and retail across Latin America and Spain. Thought leadership focuses on CX maturity models, regional benchmarking, and practical VoC program design adapted for Iberoamerican market contexts."
+    },
+    {
+      "competitor": "Globant",
+      "level": "MEDIUM",
+      "headline": "Globant continues its dominant AI-first corporate messaging with emphasis on AI engineering, generative AI enterprise adoption, and large-scale digital transformation programs. The Connected Experiences Studio remains relatively quiet in standalone CX-specific thought leadership compared to the broader corporate AI narrative. CX positioning continues to be embedded within the larger AI-driven experience transformation messaging framework.",
+      "url": "https://www.globant.com/studio/connected-experiences/",
+      "blog_profile": "Globant is a global digital transformation company with CX capabilities housed within its Connected Experiences Studio, alongside 20+ other specialized studios. Their methodology is technology-engineering-led, integrating AI, data, and design into large-scale digital experience transformation programs. Delivery model is enterprise systems integration and custom development at scale, with CX as one dimension of broader digital transformation engagements. AI stance is aggressive and corporate-wide, positioning generative AI and AI engineering as core transformation enablers across all practice areas. CX-specific thought leadership is subordinated to the dominant AI and digital transformation narrative rather than operating as a distinct practice voice."
+    },
+    {
+      "competitor": "Vocé Group",
+      "level": "LOW",
+      "headline": "No online presence, website, or social media activity detected for Vocé Group. Searches across LinkedIn, Google, and industry directories returned no verifiable information. Digital footprint remains effectively non-existent for competitive tracking purposes.",
+      "url": "",
+      "blog_profile": "No verifiable online presence or content available for analysis. Unable to assess methodology, AI stance, or delivery model due to complete absence of digital footprint."
+    },
+    {
+      "competitor": "Zill Consulting",
+      "level": "LOW",
+      "headline": "No online presence, website, or social media activity detected for Zill Consulting. Digital footprint remains minimal with no verifiable information found across LinkedIn, Google, or industry directories during this monitoring period.",
+      "url": "",
+      "blog_profile": "No verifiable online presence or content available for analysis. Unable to assess methodology, AI stance, or delivery model due to complete absence of digital footprint."
+    },
+    {
+      "competitor": "Act XM",
+      "level": "LOW",
+      "headline": "No online presence, website, or social media activity detected for Act XM. Digital footprint remains minimal with no verifiable information found across LinkedIn, Google, or industry directories during this monitoring period.",
+      "url": "",
+      "blog_profile": "No verifiable online presence or content available for analysis. Unable to assess methodology, AI stance, or delivery model due to complete absence of digital footprint."
+    },
+    {
+      "competitor": "Acceleration Strategy",
+      "level": "HIGH",
+      "headline": "Acceleration Strategy continues strong content deployment with sustained Qualtrics AI product analyses, experience orchestration thought leadership, and enterprise case study amplification targeting North American markets. Post-X4 2026 content momentum remains elevated with consistent LinkedIn engagement around AI agent deployment and XM program optimization. Canada/US market positioning remains well-supported by active Qualtrics partner page presence.",
+      "url": "https://www.qualtrics.com/partnerships/acceleration-strategy-inc/",
+      "blog_profile": "Acceleration Strategy is a Canada/US-based Qualtrics partner delivering experience management consulting with a strong content-driven market positioning. Their methodology emphasizes AI agent deployment, experience orchestration, and enterprise XM program optimization within the Qualtrics ecosystem. Delivery model combines strategic consulting with Qualtrics implementation and ongoing managed optimization services. Thought leadership is notably aggressive and high-frequency, with detailed Qualtrics product feature analyses, AI capability deep-dives, and post-X4 Summit content amplification that positions them as leading Qualtrics ecosystem interpreters in North America. Their content cadence and depth represent the most active Qualtrics partner thought leadership among tracked competitors."
+    }
+  ],
+  "takeaways": [
+    "Higher Oak's prolonged content silence (now spanning multiple consecutive weeks) may signal internal restructuring, talent changes, or strategic repositioning — SMT should explore whether their UK/EU Qualtrics clients are seeking alternative partners and position accordingly in the Qualtrics Platinum Partner ecosystem.",
+    "Acceleration Strategy's sustained HIGH activity and aggressive Qualtrics AI content leadership in North America creates both a competitive threat and a potential co-opetition opportunity — SMT should monitor whether their Canada/US banking sector penetration is deepening and consider differentiation through proprietary AI frameworks or deeper vertical specialization in banking/retail.",
+    "The GCC public sector CX market remains an opportunity where New Metrics holds incumbent positioning — SMT should evaluate whether their banking sector expertise could create a complementary entry point in GCC markets, particularly targeting Saudi and UAE financial services institutions undergoing Vision 2030-aligned digital transformation.",
+    "commonFont's consistent banking/financial services Qualtrics positioning makes them a direct competitor in SMT's core market — SMT should track any new client wins or case studies they publish in banking to understand competitive displacement patterns and prepare differentiated counter-positioning around AI-native CX approaches.",
+    "Globant's strategy of embedding CX within broader AI transformation narratives creates a distinct competitive dynamic where CX is sold as part of large-scale digital deals — SMT can exploit this by positioning as a specialized, CX-first alternative for banking and retail clients who need deep experience management expertise rather than broad-scope digital transformation programs."
+  ]
+}
